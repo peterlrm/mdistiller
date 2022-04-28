@@ -1,11 +1,11 @@
 EXPERIMENT:
   NAME: ""
-  TAG: "dkd,res32x4,res8x4_rand2"
+  TAG: "dkd,res56,res20"
   PROJECT: "cifar100_baselines"
 DISTILLER:
   TYPE: "DKD"
-  TEACHER: "resnet32x4"
-  STUDENT: "resnet8x4"
+  TEACHER: "resnet56"
+  STUDENT: "VisionTransformerBase"
 SOLVER:
   BATCH_SIZE: 64
   EPOCHS: 240
@@ -16,4 +16,4 @@ SOLVER:
   MOMENTUM: 0.9
   TYPE: "SGD"
 DKD:
-  BETA: 10.0
+  BETA: 2.0
