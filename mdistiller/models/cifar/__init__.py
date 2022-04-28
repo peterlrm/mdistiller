@@ -16,10 +16,11 @@ from .vgg import vgg19_bn, vgg16_bn, vgg13_bn, vgg11_bn, vgg8_bn
 from .mobilenetv2 import mobile_half
 from .ShuffleNetv1 import ShuffleV1
 from .ShuffleNetv2 import ShuffleV2
+from .ViT import  ViT_Base
 
 
 cifar100_model_prefix = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), 
+    os.path.dirname(os.path.abspath(__file__)),
     "../../../download_ckpts/cifar_teachers/"
 )
 cifar_model_dict = {
@@ -28,6 +29,10 @@ cifar_model_dict = {
         resnet56,
         cifar100_model_prefix + "resnet56_vanilla/ckpt_epoch_240.pth",
     ),
+    #"resnet56":(
+    #    resnet56,
+    #    "/hetu_group/linruimin/mdistiller/output/cifar100_baselines/dkd,res56,res56/student_best",
+    #),
     "resnet110": (
         resnet110,
         cifar100_model_prefix + "resnet110_vanilla/ckpt_epoch_240.pth",
@@ -63,4 +68,5 @@ cifar_model_dict = {
     "MobileNetV2": (mobile_half, None),
     "ShuffleV1": (ShuffleV1, None),
     "ShuffleV2": (ShuffleV2, None),
+    "VisionTransformerBase":(ViT_Base, None),
 }
